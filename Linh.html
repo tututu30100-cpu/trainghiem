@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoạt Động Ngoại Khóa 2025 - THPT Huỳnh Văn Nghệ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <linkcdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* --- KHAI BÁO BIẾN MÀU SẮC --- */
+        :root {
+            --primary-color: #d32f2f; /* Màu đỏ chủ đạo */
+            --secondary-color: #1565c0; /* Màu xanh nhấn */
+            --text-color: #333;
+            --bg-light: #fdfbf8; /* Màu nền kem nhẹ */
+            --card-bg: #ffffff;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+            --shadow-md: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        /* --- CẤU TRÚC CƠ BẢN --- */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--bg-light);
+            background-image: linear-gradient(to bottom right, #fdfbf8, #f0f4f8); /* Gradient nền nhẹ */
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        /* --- HERO SECTION (PHẦN TIÊU ĐỀ CHÍNH) --- */
+        .hero-header {
+            /* Sử dụng một ảnh làm nền mờ cho tiêu đề */
+            background: linear-gradient(rgba(211, 47, 47, 0.85), rgba(21, 101, 192, 0.8)), 
+                        url('https://scontent-hkg1-1.xx.fbcdn.net/v/t39.30808-6/594318646_122096208405153525_689601644739139014_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHUplmOtueC-t14cCWGHRVTwDF4snV87Y7AMXiydXztjqhzeSzZqJJTFr1dLA0hH2HTVq1LobEErhLw8Y5MgnxQ&_nc_ohc=PAG-gYJtw08Q7kNvwG33YOZ&_nc_oc=AdkVoOp-HmAITO90_q5Kvfl0-Ir0lqCjtbURaDYiIML1zAZdej-V2FCxXbbZlryjV1M&_nc_zt=23&_nc_ht=scontent-hkg1-1.xx&_nc_gid=sooTy3bB1bkMgVsGr_RAsA&oh=00_AfrdKPgHszbNa8gI-0g5clJENizoWX-mlGnL52xnoaFT2w&oe=6967D7B9');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 32px;
+            text-transform: uppercase;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 1px;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            margin-top: 15px;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        /* --- CONTAINER CHÍNH --- */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- CÁC KHỐI NỘI DUNG (DẠNG THẺ ZIGZAG) --- */
+        .content-section {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 50px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            /* Hiệu ứng xuất hiện đơn giản */
+            animation: fadeUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        
+        /* Tạo độ trễ cho hiệu ứng xuất hiện từng khối */
+        .content-section:nth-child(1) { animation-delay: 0.2s; }
+        .content-section:nth-child(2) { animation-delay: 0.4s; }
+        .content-section:nth-child(3) { animation-delay: 0.6s; }
+        .content-section:nth-child(4) { animation-delay: 0.8s; }
+
+
+        .content-section:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Responsive Flexbox cho Laptop/PC */
+        @media (min-width: 768px) {
+            .content-section {
+                flex-direction: row;
+                align-items: center;
+                min-height: 350px;
+            }
+
+            /* Đảo ngược thứ tự cho các thẻ chẵn để tạo hiệu ứng zigzag */
+            .content-section:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+
+            .content-text {
+                flex: 1;
+                padding: 40px;
+            }
+
+            .content-image {
+                flex: 1;
+                height: 100%;
+                min-height: 350px; /* Chiều cao tối thiểu để ảnh không bị quá nhỏ */
+            }
+            
+            .content-image img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover; /* Đảm bảo ảnh phủ kín khung mà không bị méo */
+                border-radius: 0; /* Loại bỏ bo góc khi ở chế độ flex zigzag */
+            }
+        }
+
+        /* --- ĐỊNH DẠNG VĂN BẢN BÊN TRONG THẺ --- */
+        .content-text {
+            padding: 25px;
+        }
+
+        h2.section-title {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--secondary-color);
+            font-size: 22px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Icon trang trí trước tiêu đề phụ (sử dụng emoji nếu không dùng Font Awesome) */
+        h2.section-title::before {
+            content: '📌'; 
+            margin-right: 10px;
+            font-size: 24px;
+        }
+        /* Nếu dùng Font Awesome, bỏ comment dòng dưới và xóa dòng trên */
+        /* h2.section-title i { margin-right: 10px; } */
+
+        p {
+            font-size: 17px;
+            margin-bottom: 0;
+            text-align: justify;
+            color: #555;
+        }
+        
+        strong {
+            color: var(--primary-color);
+        }
+
+        /* --- ĐỊNH DẠNG HÌNH ẢNH --- */
+        .content-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+            /* Mặc định cho mobile */
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+        }
+
+        /* Hiệu ứng zoom khi hover vào ảnh */
+        .content-section:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Chú thích ảnh (Caption) */
+        .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 10px 15px;
+            font-size: 14px;
+            font-style: italic;
+            text-align: center;
+            opacity: 0; /* Ẩn mặc định */
+            transition: opacity 0.3s ease;
+        }
+
+        /* Hiện caption khi hover vào phần chứa ảnh */
+        .content-image:hover .caption {
+            opacity: 1;
+        }
+
+
+        /* --- FOOTER --- */
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px 0;
+            border-top: 2px solid rgba(0,0,0,0.05);
+            color: #888;
+            font-size: 15px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Keyframes cho hiệu ứng xuất hiện */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero-header">
+        <h1>Trường THPT Huỳnh Văn Nghệ</h1>
+        <marquee>
+        <div class="hero-subtitle">Hoạt động trải nghiệm, hướng nghiệp & giáo dục kỹ năng sống</div>
+    </marquee>
+    </header>
+
+    <div class="container">
+        
+        <section class="content-section">
+            <div class="content-text">
+                <h2 class="section-title">Hành Trình Về "Địa Chỉ Đỏ"</h2>
+                <p>
+                    Mở đầu chương trình là hoạt động về nguồn đầy ý nghĩa tại <strong>Di tích lịch sử Nhà tù Phú Lợi</strong>. Tại "địa chỉ đỏ" linh thiêng này, các em học sinh đã kính cẩn dâng hương, lắng nghe những câu chuyện lịch sử hào hùng, qua đó thấu hiểu sâu sắc và bày tỏ lòng biết ơn vô hạn trước sự hy sinh to lớn của các thế hệ cha anh đi trước.
+                </p>
+            </div>
+            <div class="content-image">
+                <img src="https://scontent-hkg1-2.xx.fbcdn.net/v/t39.30808-6/593004493_122096202333153525_2864025838718682915_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeG1DQMceprmjiraKEnrWFGSQstZBeamLmdCy1kF5qYuZ152JnyUbkbUylw8Dm15D30J4t-LbmOJ4lx1bGHj2rQu&_nc_ohc=j6932Ck3aKEQ7kNvwFsJ3V6&_nc_oc=AdkAJT9oM310qtEzIfn76Qp73fSlSKbsEmyUkYgfrmFYPgTj6bFuSc9nWqclEVd4fwo&_nc_zt=23&_nc_ht=scontent-hkg1-2.xx&_nc_gid=-r4UPjuwgAOriCRKaAD3Zg&oh=00_AfroHyzIKG763bnGfR-4bnOw0CUB9-yNmfWClzG5YwFZug&oe=6967E41A" alt="Dâng hương tại Nhà tù Phú Lợi">
+                <div class="caption">Đoàn học sinh dâng hương và tham quan tại Di tích lịch sử Nhà tù Phú Lợi</div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="content-text">
+                <h2 class="section-title">Sôi Nổi Rèn Luyện Kỹ Năng</h2>
+                <p>
+                    Tiếp nối hành trình, đoàn đến với <strong>Kawazo Park</strong> – một "miền Tây thu nhỏ" xanh mát. Học sinh được hòa mình vào thiên nhiên và tham gia hàng loạt hoạt động team-building sôi nổi. Các trò chơi vận động tập thể không chỉ giúp rèn luyện sức khỏe, sự khéo léo mà còn nâng cao tinh thần đoàn kết, đồng đội.
+                </p>
+            </div>
+            <div class="content-image">
+                <img src="https://scontent-hkg1-2.xx.fbcdn.net/v/t39.30808-6/591552151_122096218407153525_7675504945458215592_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEJDEQdDIh0rudRPZaWsj42vlcmZ1GyrPS-VyZnUbKs9DoeGCjlZIQSDXgYxvFn-ZWlJYkHduAvy1yk5FQj5y5z&_nc_ohc=yrDss7rL01AQ7kNvwEzFbJc&_nc_oc=AdnPl8OE4anhqAzozw18hCEbGQlNZ5RoaZGxFzplNDIeOGISP6HZHsQgql-bNoSK1hQ&_nc_zt=23&_nc_ht=scontent-hkg1-2.xx&_nc_gid=mcwB2qYm_fSrHxluGnhU7g&oh=00_AfpJdPaVkpZuLpYtXGFAw3Z9Y9IcLftgM6uuZ9hPCiupfQ&oe=6967FC42" alt="Hoạt động trải nghiệm tại Kawazo Park">
+                <div class="caption">Học sinh hào hứng tham gia các trò chơi vận động liên hoàn</div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="content-text">
+                <h2 class="section-title">Trải Nghiệm Văn Hóa Truyền Thống</h2>
+                <p>
+                    Điểm nhấn đặc biệt là khu vực trải nghiệm làng nghề. Học sinh được tự tay thử sức với các nghề thủ công truyền thống như: <strong>dệt chiếu cói, se nhang, in gốm và làm bánh xèo dân gian</strong>. Những sản phẩm tuy mộc mạc nhưng chứa đựng sự khéo léo và tình yêu văn hóa, giúp các em thêm trân trọng những giá trị truyền thống của dân tộc.
+                </p>
+            </div>
+            <div class="content-image">
+                <img src="https://scontent-hkg1-2.xx.fbcdn.net/v/t39.30808-6/593356186_122096218185153525_3647837087719736275_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHMfHsfAhZTyLE_dLsoEdZ3ebWiVpTX9UR5taJWlNf1RJfHv5N6S7LTr6MoTWECx-15Bleyiuc2Fy-VAqV7oOtM&_nc_ohc=UHJOnCKOEDAQ7kNvwFUftWs&_nc_oc=Adk2zp6Pn4p5hPp7mf0Mwlv0b43fsx4o1rqRZbmJIaiTqN7JRB5HKJ7s5ebDK2k5qEg&_nc_zt=23&_nc_ht=scontent-hkg1-2.xx&_nc_gid=zh5D0I0q9gxP5iGkwc2SFQ&oh=00_Afrox-KKOLOG41sQGBKJ3cwfmrebF88ClZuSeHxEHIq-VQ&oe=6967EC0C" alt="Học sinh trải nghiệm nghề thủ công">
+                <div class="caption">Hào hứng với trải nghiệm làm gốm và đổ bánh xèo miền Tây</div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="content-text">
+                <h2 class="section-title">Kỷ Niệm Đẹp Tuổi Học Trò</h2>
+                <p>
+                    Không khí giao lưu văn nghệ sôi nổi, những nụ cười rạng rỡ và tinh thần gắn kết bền chặt giữa thầy cô và học sinh đã khép lại một ngày trải nghiệm trọn vẹn cảm xúc. Chuyến đi không chỉ mang lại kiến thức thực tế bổ ích mà còn dệt nên những kỷ niệm thanh xuân tươi đẹp khó quên dưới mái trường THPT Huỳnh Văn Nghệ.
+                </p>
+            </div>
+            <div class="content-image">
+                <img src="https://scontent-hkg1-1.xx.fbcdn.net/v/t39.30808-6/594318646_122096208405153525_689601644739139014_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHUplmOtueC-t14cCWGHRVTwDF4snV87Y7AMXiydXztjqhzeSzZqJJTFr1dLA0hH2HTVq1LobEErhLw8Y5MgnxQ&_nc_ohc=PAG-gYJtw08Q7kNvwG33YOZ&_nc_oc=AdkVoOp-HmAITO90_q5Kvfl0-Ir0lqCjtbURaDYiIML1zAZdej-V2FCxXbbZlryjV1M&_nc_zt=23&_nc_ht=scontent-hkg1-1.xx&_nc_gid=sooTy3bB1bkMgVsGr_RAsA&oh=00_AfrdKPgHszbNa8gI-0g5clJENizoWX-mlGnL52xnoaFT2w&oe=6967D7B9" alt="Giao lưu văn nghệ và chụp ảnh lưu niệm">
+                <div class="caption">Khoảnh khắc vui tươi, gắn kết giữa thầy và trò</div>
+            </div>
+        </section>
+
+        <div class="footer">
+            &copy; 2025 Trường THPT Huỳnh Văn Nghệ. <br>Nuôi dưỡng tri thức - Rèn luyện nhân cách.
+        </div>
+    </div>
+
+</body>
+</html>
+
+```
+
